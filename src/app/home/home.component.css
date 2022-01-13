@@ -1,0 +1,9 @@
+.main-content{
+    float: left;
+    width: 900px
+}
+
+.sidebar{
+    float: right;
+    width: 300px;
+}

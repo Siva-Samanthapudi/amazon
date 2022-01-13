@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="form-container">
+    <h2>Login</h2>
+    <form #formData ngForm name="formData">
+      
+      <input type="text" 
+      ngModel
+      name="email" 
+      placeholder="Email address" 
+      class="input-txt" 
+      required>
+  
+      <input type="password" 
+      ngModel 
+      name="password" 
+      placeholder="Password" 
+      class="input-txt" 
+      required>
+  
+      <button type="button" class="auth-btn" (click)="onSubmit(formData.email.value, formData.password.value)">Log in</button>
+    </form>
+    <a routerLink="/signup" routerLinkActive="active" class="create-account-txt">No account? <strong>Create one here</strong></a>
+  </div>
+  
+  
