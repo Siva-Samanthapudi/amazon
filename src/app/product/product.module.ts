@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsComponent } from './products/products.component';
 import { AddProductComponent } from './add-product/add-product.component';
-import { ViewProductComponent } from './view-product/view-product.component';
-import {ProductRoutingModule} from './product-routing.module';
+import { ProductRoutingModule } from './product-routing.module';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { ProductItemComponent } from './products/product-list/product-item/product-item.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 
@@ -11,7 +13,9 @@ import {ProductRoutingModule} from './product-routing.module';
   declarations: [
     ProductsComponent,
     AddProductComponent,
-    ViewProductComponent
+    ProductListComponent,
+    ProductItemComponent,
+    ProductDetailsComponent
   ],
   imports: [
     CommonModule,

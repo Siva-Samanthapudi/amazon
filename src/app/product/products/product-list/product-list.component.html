@@ -1,0 +1,6 @@
+<div class="row">
+    <div class="col-xs-5" style="margin:2px">
+        <button class="btn btn-success" (click)="addProduct()">+Add Product</button>
+    </div>
+    <app-product-item  *ngFor="let product of productList" [productItem]="product"></app-product-item>
+</div>

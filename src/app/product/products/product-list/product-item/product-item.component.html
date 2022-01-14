@@ -1,0 +1,17 @@
+<div class="row" routerLinkActive="active" >
+    <div class="col-xs-5" routerLinkActive="active"  >
+        <a class="list-group-item"  (click)="onSelected(productItem)">
+            <div >
+                <div class="pull-left">
+                    <h5 class="list-group-item-heading">{{productItem.name}}</h5>
+                    <p class="list-group-item-text">{{productItem.description}}</p>
+                </div>
+                <div style="float:right; margin-top:-60px">
+                    <span >
+                        <img [src]="productItem.imageUrl" class="img-responsive" style="height:20px; width:40px;">
+                    </span>
+                </div>    
+            </div>
+        </a>
+    </div>
+</div>
