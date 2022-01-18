@@ -1,24 +1,19 @@
-<div class="form-container">
-    <h2>Login</h2>
-    <form #formData ngForm name="formData">
-      
-      <input type="text" 
-      ngModel
-      name="email" 
-      placeholder="Email address" 
-      class="input-txt" 
-      required>
-  
-      <input type="password" 
-      ngModel 
-      name="password" 
-      placeholder="Password" 
-      class="input-txt" 
-      required>
-  
-      <button type="button" class="auth-btn" (click)="onSubmit(formData.email.value, formData.password.value)">Log in</button>
-    </form>
-    <a routerLink="/signup" routerLinkActive="active" class="create-account-txt">No account? <strong>Create one here</strong></a>
-  </div>
-  
-  
+<div class="form-container" class="col-sm-3">
+   <form #formData class="form" ngForm name="formData">
+    <div>
+      <label for="email"></label>
+      <input type="text" ngModel name="email" placeholder="Email address" class="form-control" required>
+    </div>
+
+    <div>
+      <label for="password"></label>
+      <input type="password" ngModel name="password" placeholder="Password" class="form-control" required>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" (click)="onSubmit(formData.email.value, formData.password.value)">Log
+        in</button>
+    </div>
+  </form>
+  <a routerLink="/signup" routerLinkActive="active" class="create-account-txt">No account? <strong>Create one
+      here</strong></a>
+</div>

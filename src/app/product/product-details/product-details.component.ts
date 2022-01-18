@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, DoCheck, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
 
@@ -7,22 +8,23 @@ import { ProductService } from '../product.service';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent implements OnInit {
-  //@Input('product') selectedProduct?: Product;
-  selectedProduct?:Product;
-  @Input('title') title?: string;
-  @Input('closeBtnName') closeBtnName?: string;
-  @Input('id') id?: number | any;
-
-  //@Input ('initialState') initialState: any;
-  constructor(private productService: ProductService) {
-    console.log("product details initated");
-    if(this.selectedProduct?.id)
-     this.productService.getProduct(this.selectedProduct.id);
+export class ProductDetailsComponent implements OnInit, DoCheck {
+  selectedProduct: Product;
+  constructor(private productService: ProductService, private activateRoute: ActivatedRoute) {
+    this.selectedProduct = this.updateProductSelected();
   }
-  
+
   ngOnInit(): void {
-    console.log(this.selectedProduct);
+  }
+
+  ngDoCheck() {
+    this.selectedProduct = this.updateProductSelected();
+  }
+
+  updateProductSelected() {
+    let id: number | any = this.activateRoute.snapshot.paramMap.get('id');
+    return this.selectedProduct = this.productService.getProduct(id);
   }
 
 }
+

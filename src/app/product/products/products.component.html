@@ -1,7 +1,10 @@
-<div class="container">
-    <button style="float:right" class="btn btn-primary" (click)="addProduct()">Add Product </button>
-    <div class="col-sm-6">
-        <app-product-list [products]="products"></app-product-list>
+    <div class="row">
+        <div class="col-sm-3">
+            <app-product-list [products]="products"></app-product-list>
+        </div>
+        <div class="col-sm-6">
+            <app-product-details></app-product-details>
+            <router-outlet></router-outlet>
+        </div>
     </div>
-</div>
-<router-outlet></router-outlet>
+

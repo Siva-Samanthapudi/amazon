@@ -1,7 +1,6 @@
-<p>{{title || 'Dummy Tilte'}}</p>
-
-
-
+<div *ngIf="selectedProduct">
+    <h5>Details</h5>
     <p>{{selectedProduct?. name}}</p>
-    <p> {{ selectedProduct?.description}}</p>
-    <p>Rs: {{selectedProduct?.price}} /-</p>
+    <p>{{ selectedProduct?.description}}</p>
+    <p>{{selectedProduct?.price}}</p>
+</div>
