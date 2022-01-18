@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { ProductDetailsComponent } from 'src/app/product/product-details/product-details.component';
 import { Product } from 'src/app/product/product.model';
@@ -13,12 +14,14 @@ export class ProductItemComponent implements OnInit {
   @Input('productItem') productItem : Product | any;
   bsModalRef?: BsModalRef;
 
-  constructor(private modalService: BsModalService, private productService: ProductService) {
-   }
+  constructor(private modalService: BsModalService, 
+              private productService: ProductService, 
+              private route: Router) {}
 
   ngOnInit(): void {
   }
 
+  /*
   onSelected(productItemSelected: Product){
     console.log("selected ite:", productItemSelected)
     const initialState: ModalOptions = {
@@ -32,5 +35,10 @@ export class ProductItemComponent implements OnInit {
     this.bsModalRef = this.modalService.show(ProductDetailsComponent, initialState);
     this.bsModalRef.content.closeBtnName = "Close";
   }
+*/
+
+onSelected(productItemSelected : Product){
+  this.route.navigate([productItemSelected.id,'details']);
+}
 
 }
